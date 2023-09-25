@@ -4,7 +4,7 @@ const DonationsCard = ({donation}) => {
     console.log(donation)
 
 
-    const {id,picture,title,price} = donation || {}
+    const {id,picture,title,price,description} = donation || {}
     const handleAddToDonation = () => {
         const addedDonationsArray = []
         const donationItems = JSON.parse(localStorage.getItem('donations'))
@@ -22,10 +22,7 @@ const DonationsCard = ({donation}) => {
           }
           else{
             swal("Already Donated!");
-          }
-         }
-
-    }
+          }}}
     
       return ( 
         <div className="relative h-96 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
@@ -40,7 +37,10 @@ const DonationsCard = ({donation}) => {
   </div>
   <div className="p-6">
     <div className="mb-2">
-      <h1>{title}</h1>
+      <h1 className='text-2xl font-bold'>{title}</h1>
+    </div>
+    <div>
+      <p className='text-xl font-medium'>{description}</p>
     </div>
   </div>
 </div>
