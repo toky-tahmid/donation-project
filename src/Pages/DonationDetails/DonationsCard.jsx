@@ -4,7 +4,10 @@ const DonationsCard = ({donation}) => {
     console.log(donation)
 
 
-    const {id,picture,title,price,description} = donation || {}
+    const { id,picture,title,category_bg_color,description,price} = donation || {}
+    const categoryBgColor = {
+      backgroundColor: category_bg_color,
+    };  
     const handleAddToDonation = () => {
         const addedDonationsArray = []
         const donationItems = JSON.parse(localStorage.getItem('donations'))
@@ -23,15 +26,13 @@ const DonationsCard = ({donation}) => {
           else{
             swal("Already Donated!");
           }}}
-    
       return ( 
-        <div className="relative h-96 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-  <div className="relative mx-4 mt-4 h-96 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
+        <div>
+  <div className="relative mt-4 h-96 overflow-hidden rounded-xl">
     <img src={picture} className="h-full w-[600vh] object-cover" alt="" />
-    <div className="absolute bottom-0 left-0 w-full h-20 bg-black opacity-60"></div>
     <div className="absolute bottom-4 left-4">
-      <button onClick={handleAddToDonation} className="bg-[#FF444A] text-white py-2 px-4 rounded-md shadow-md">
-        Donate {price}
+      <button style={categoryBgColor} onClick={handleAddToDonation} className="  py-2 px-4 rounded-md shadow-md text-white" >
+        Donate ${price}
       </button>
     </div>
   </div>
@@ -44,11 +45,7 @@ const DonationsCard = ({donation}) => {
     </div>
   </div>
 </div>
-
-
-
-
-      );
-    };
+);
+};
 
 export default DonationsCard;

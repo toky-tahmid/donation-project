@@ -7,13 +7,12 @@ const DonationsStoredCard = ({donation}) => {
     };
     const categoryBgColor = {
       backgroundColor: category_bg_color,
-    };
-    
+    };  
   return (
     <div  style={cardStyle} >
       <div className="card flex lg:flex gap-4 shadow-xl"> 
-          <img src={picture} />
-          <div className="">
+          <img  src={picture} />
+          <div>
           <div className="mb-2">
             <div
               style={categoryBgColor}
@@ -23,7 +22,7 @@ const DonationsStoredCard = ({donation}) => {
           <h2 className="text-xl font-bold">{title}</h2>
             <p className="font-semibold text-blue-500">${price}</p>
 
-            <button className="p-2 rounded-md px-3 -mr-2 mt-6 text-white bg-[#FF444A]">View Details</button>
+            <button style={categoryBgColor} className="p-2 rounded-md px-3 -mr-2 mt-6 text-white ">View Details</button>
         </div>
       </div>
     </div>
