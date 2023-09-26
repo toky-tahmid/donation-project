@@ -9,9 +9,9 @@ const DonationsStoredCard = ({donation}) => {
       backgroundColor: category_bg_color,
     };  
   return (
-    <div  style={cardStyle} >
-      <div className="card flex lg:flex gap-4 shadow-xl"> 
-          <img  src={picture} />
+    <div style={cardStyle} className="w-[500px]" >
+      <div className="card flex lg:flex gap-4 shadow-xl "> 
+          <img src={picture} />
           <div>
           <div className="mb-2">
             <div
